@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Tile = ({ data, size = 'medium', onClick, isSelected }) => {
     const isLarge = size === 'large';
-    const imagePath = data.image;
+    const imagePath = `${import.meta.env.BASE_URL}${data.image}`;
 
     // Dimensions
     const dimensions = isLarge ? 'w-32 h-44' : 'w-20 h-28';
