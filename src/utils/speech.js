@@ -15,7 +15,7 @@ export const speak = (audioPaths) => {
     const playNext = () => {
         if (index >= audioPaths.length) return;
 
-        const path = `${import.meta.env.BASE_URL}${audioPaths[index]}`;
+        const path = audioPaths[index];
         const audio = new Audio(path);
         currentAudio = audio;
 
