@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #2e1065;
+  /* Deep Purple */
+  --bg-secondary: #4c1d95;
+  /* Lighter Purple */
+  --bg-card: #5b21b6;
+  /* Card Purple */
+
+  --text-primary: #fdf4ff;
+  /* Pinkish White */
+  --text-secondary: #e9d5ff;
+  /* Light Purple Text */
+
+  --accent-cyan: #22d3ee;
+  --accent-pink: #f472b6;
+  --accent-yellow: #facc15;
+
+  --font-main: 'Varela Round', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(34, 211, 238, 0.1), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(244, 114, 182, 0.15), transparent 25%);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Gamified Button Styles */
+.btn-gamified {
+  position: relative;
+  background-color: white;
+  border-radius: 16px;
+  padding: 1em 1em;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #333;
+  border: none;
+  box-shadow: 0 6px 0 #cbd5e1, 0 10px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-gamified:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 #cbd5e1, 0 0px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--accent-cyan);
+  color: #0c4a6e;
+  box-shadow: 0 6px 0 #0891b2, 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+  box-shadow: 0 0 0 #0891b2, 0 0px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background-color: var(--accent-pink);
+  color: #831843;
+  box-shadow: 0 6px 0 #be185d, 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:active {
+  box-shadow: 0 0 0 #be185d, 0 0px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  background-color: rgba(91, 33, 182, 0.5);
+  /* Glassy Card */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-pop {
+  animation: pop 0.3s ease-out;
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-shadow: 2px 2px 0px var(--bg-secondary);
+}
